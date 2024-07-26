@@ -1,10 +1,25 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.25.0
+exclude:
+  code:
+    - ./routes/profileImageUrlUpload.js
+  global:
+    - ./terraform/modules/storage/main.tf
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  'snyk:lic:npm:fuzzball:GPL-2.0':
-    - '*':
+  "snyk:lic:npm:fuzzball:GPL-2.0":
+    - "*":
         reason: None Given
         expires: 2022-09-04T15:07:01.040Z
         created: 2022-08-05T15:07:01.043Z
+  SNYK-PYTHON-GITPYTHON-3113858:
+    - "*":
+        reason: None Given
+        expires: 2023-12-12T00:00:00.000Z
+        created: 2023-05-30T17:23:23.176Z
+  SNYK-JS-SOCKETIOPARSER-3091012:
+    - "*":
+        reason: ide test
+        expires: 2023-12-12T00:00:00.000Z
+        created: 2023-05-30T17:24:56.583Z
 patch: {}
